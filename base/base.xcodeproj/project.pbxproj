@@ -284,19 +284,18 @@
 			children = (
 				2937EB3129636BEA00BBC0E6 /* Taskable.swift */,
 				2937EB3229636BEA00BBC0E6 /* Usable.swift */,
-				2937EB3529636BEA00BBC0E6 /* ToastUtilities */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2937EB3529636BEA00BBC0E6 /* ToastUtilities */ = {
+		2937EB3529636BEA00BBC0E6 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
 				2937EB3629636BEA00BBC0E6 /* ToastStyle.swift */,
 				2937EB3729636BEA00BBC0E6 /* ToastModifier.swift */,
 				2937EB3829636BEA00BBC0E6 /* ToastNotificationView.swift */,
 			);
-			path = ToastUtilities;
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		2937EB3929636BEA00BBC0E6 /* Networking */ = {
@@ -360,6 +359,7 @@
 		2937EB4B29636BEA00BBC0E6 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				2937EB3529636BEA00BBC0E6 /* Toast */,
 				2937EB4C29636BEA00BBC0E6 /* CartographyPath.swift */,
 				2937EB4D29636BEA00BBC0E6 /* CartographyAlert.swift */,
 				2937EB4E29636BEA00BBC0E6 /* CartographyModal.swift */,
