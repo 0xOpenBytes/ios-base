@@ -1,0 +1,11 @@
+{
+    "id": "22eba8b2-8252-11ed-a1eb-0242ac120002",
+    "color": {
+        "red": 0,
+        "green": 0.5,
+        "blue": 0,
+        "alpha": 1
+    },
+    "name": "Mock User",
+    "email": "Mock@json.local"
+}

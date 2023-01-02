@@ -1,0 +1,37 @@
+name: Failing Test
+description: Report failing tests or CI jobs.
+labels: ["Type: Test"]
+title: "[TEST]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please make sure this task hasn't been already submitted by looking through other open/closed issues.
+
+  - type: textarea
+    id: which-test
+    attributes:
+      label: Which test is failing?
+      description: List the CI jobs or tests that are failing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Try to describe why the test is failing or what we are missing to make it pass.
+    validations:
+      required: true
+
+  - type: textarea
+    id: media
+    attributes:
+      label: Media
+      description: If applicable, add screenshots or videos to help explain the problem.
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Add any other context or additional information about the problem here.
