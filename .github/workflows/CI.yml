@@ -12,6 +12,8 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '14.1'
+      - name: pre-start simulator
+        command: 'xcrun instruments -w "iPhone 14 Pro Max (16.1) [" || true'
       - name: Build
         run: >
           cd base
