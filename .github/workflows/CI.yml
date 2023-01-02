@@ -1,8 +1,5 @@
 name: CI
 'on':
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -16,13 +13,15 @@ jobs:
         with:
           xcode-version: '14.1'
       - name: Build
-        run: |
+        run: >
           cd base
-          xcodebuild build -project base.xcodeproj -scheme
-                    'base' clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
+
+          xcodebuild build -project base.xcodeproj -scheme base clean build -sdk
+          iphoneos CODE_SIGNING_ALLOWED=No
       - name: Tests
-        run: |
+        run: >
           cd base
-          xcodebuild test -project base.xcodeproj -scheme
-                    'base' clean build -sdk iphoneos -destination "platform=iOS
-          Simulator,OS=16.1,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
+
+          xcodebuild test -project base.xcodeproj -scheme base clean build -sdk
+          iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14
+          Pro Max" CODE_SIGNING_ALLOWED=No
