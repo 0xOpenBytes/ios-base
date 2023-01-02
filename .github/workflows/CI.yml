@@ -13,7 +13,7 @@ jobs:
         with:
           xcode-version: '14.1'
       - name: pre-start simulator
-        command: 'xcrun instruments -w "iPhone 14 Pro Max (16.1) [" || true'
+        run: 'xcrun instruments -w "iPhone 14 Pro Max (16.1) [" || true'
       - name: Build
         run: >
           cd base
