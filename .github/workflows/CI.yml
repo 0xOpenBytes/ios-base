@@ -23,7 +23,7 @@ jobs:
 
           xcrun simctl list runtimes
 
-          xcrun simctl create 'iPhone 14 Pro Max' "iPhone 14 Pro Max"
+          xcrun simctl create CI "iPhone 14 Pro Max"
           "com.apple.CoreSimulator.SimRuntime.iOS-16-1"
 
           xcrun simctl list devices 16.1
@@ -38,5 +38,5 @@ jobs:
           cd base
 
           xcodebuild test -project base.xcodeproj -scheme base clean build -sdk
-          iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14
-          Pro Max" CODE_SIGNING_ALLOWED=No
+          iphoneos -destination "platform=iOS Simulator,OS=16.1,name=CI"
+          CODE_SIGNING_ALLOWED=No
