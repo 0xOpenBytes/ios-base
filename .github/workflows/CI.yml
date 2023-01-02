@@ -23,9 +23,8 @@ jobs:
 
           xcrun simctl list runtimes
 
-          xcrun simctl create custom-test-device "iPhone 14
-
-          Pro Max" "com.apple.CoreSimulator.SimRuntime.iOS-16-1"
+          xcrun simctl create custom-test-device "iPhone 14 Pro Max"
+          "com.apple.CoreSimulator.SimRuntime.iOS-16-1"
 
           xcrun simctl list devices 16.1
       - name: Build
