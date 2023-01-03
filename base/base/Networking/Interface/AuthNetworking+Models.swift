@@ -94,3 +94,4 @@ struct RegisterResponse: Codable {
 
     var token: String { access_token }
 }
+// swiftlint:enable identifier_name

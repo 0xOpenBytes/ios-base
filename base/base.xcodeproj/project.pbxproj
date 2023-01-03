@@ -284,19 +284,18 @@
 			children = (
 				2937EB3129636BEA00BBC0E6 /* Taskable.swift */,
 				2937EB3229636BEA00BBC0E6 /* Usable.swift */,
-				2937EB3529636BEA00BBC0E6 /* ToastUtilities */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2937EB3529636BEA00BBC0E6 /* ToastUtilities */ = {
+		2937EB3529636BEA00BBC0E6 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
 				2937EB3629636BEA00BBC0E6 /* ToastStyle.swift */,
 				2937EB3729636BEA00BBC0E6 /* ToastModifier.swift */,
 				2937EB3829636BEA00BBC0E6 /* ToastNotificationView.swift */,
 			);
-			path = ToastUtilities;
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		2937EB3929636BEA00BBC0E6 /* Networking */ = {
@@ -360,6 +359,7 @@
 		2937EB4B29636BEA00BBC0E6 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				2937EB3529636BEA00BBC0E6 /* Toast */,
 				2937EB4C29636BEA00BBC0E6 /* CartographyPath.swift */,
 				2937EB4D29636BEA00BBC0E6 /* CartographyAlert.swift */,
 				2937EB4E29636BEA00BBC0E6 /* CartographyModal.swift */,
@@ -774,7 +774,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -828,7 +828,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -854,6 +854,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -883,6 +884,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -905,7 +907,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8M8SAX62V2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = openbytes.baseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -925,7 +927,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8M8SAX62V2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = openbytes.baseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
