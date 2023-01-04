@@ -20,13 +20,13 @@ The OpenBytes template for iOS projects using SwiftUI
     - Persistence
         - Caching
             - Image: Memory storage for Images, used in ImageView.
-            - Data: Memory storage for anything comforming to DataCaching.
+            - Data: Memory storage for anything conforming to DataCaching.
     - Preview Content
     - Settings: Shared app data and state.
     - Utilities: Miscellaneous app utilities. 
 - baseTests
     - Adapters: Test Network to Device and Device to Network transformations.
-    - Persistence: Tests for Persitence and Caching.
+    - Persistence: Tests for Persistence and Caching.
     - UserRegistration: Tests for register using ViewModels and DI.
     - Validation: Tests for different types of data validation.
 
