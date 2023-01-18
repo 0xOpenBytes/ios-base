@@ -42,15 +42,15 @@ class RegisterViewModel: ObservableObject {
                 )
 
                 await MainActor.run {
+                    AppSettings.shared.user = user
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     Navigation.path.toast(
                         title: "Success",
                         message: "You have successfully registered an account.",
                         style: .success
                     )
-                }
-
-                await MainActor.run {
-                    AppSettings.shared.user = user
                 }
             } catch {
                 handle(error: error)

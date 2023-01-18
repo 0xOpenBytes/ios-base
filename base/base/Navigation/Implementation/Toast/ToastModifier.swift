@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-/// This `ViewModifier` allows us to define the actual view modifier, its animation and interaction within the view.
-/// This is built to be applied over any of the content shown, using `ZStack`.
 struct ToastModifer: ViewModifier {
     @Binding var toast: CartographyToast?
     @State private var workItem: DispatchWorkItem?
@@ -17,9 +15,8 @@ struct ToastModifer: ViewModifier {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(
-                ZStack {
-                    toastView()
-                }.animation(.spring(), value: toast)
+                toastView()
+                    .animation(.spring(), value: toast)
             )
             .onChange(of: toast) { _ in
                 showToast()
