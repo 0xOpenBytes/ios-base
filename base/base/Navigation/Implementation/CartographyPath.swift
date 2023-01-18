@@ -8,7 +8,9 @@
 import SwiftUI
 
 class CartographyPath: ObservableObject {
-    private static let filename = "CartographyPath"
+    private static let filePrefix = "CartographyPath"
+
+    let id: String
 
     @Published var navigation: NavigationPath
     @Published var modal: CartographyModal?
@@ -16,7 +18,8 @@ class CartographyPath: ObservableObject {
     @Published var actionSheet: CartographyActionSheet?
     @Published var toast: CartographyToast?
 
-    init(_ codable: NavigationPath.CodableRepresentation? = nil) {
+    init(id: String, _ codable: NavigationPath.CodableRepresentation? = nil) {
+        self.id = id
         if let codable {
             navigation = NavigationPath(codable)
         } else {
@@ -30,23 +33,27 @@ class CartographyPath: ObservableObject {
 
     func save() {
         guard
-            Navigation.isPreview == false,
+            Navigation.shared.isPreview == false,
             let representation = navigation.codable
         else { return }
 
         do {
-            try Disk.out(representation, filename: Self.filename)
+            try Disk.out(representation, filename: Self.name(id: id))
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    static func load() -> CartographyPath {
+    static func load(id: String) -> CartographyPath {
         defer {
-            try? Disk.delete(filename: filename)
+            try? Disk.delete(filename: name(id: id))
         }
 
-        return CartographyPath(try? Disk.in(filename: filename))
+        return CartographyPath(id: id, try? Disk.in(filename: name(id: id)))
+    }
+
+    static func name(id: String) -> String {
+        "\(filePrefix).\(id)"
     }
 }
 

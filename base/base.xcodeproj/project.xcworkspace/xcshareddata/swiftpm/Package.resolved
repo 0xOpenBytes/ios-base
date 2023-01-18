@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xOpenBytes/c",
       "state" : {
-        "revision" : "f24cc61b1ca4b72bcc690748232f254771e4d6a8",
-        "version" : "3.0.0"
+        "revision" : "e50c296ae2e0cdb9f5032534dfc8e590c7b0cfce",
+        "version" : "3.0.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xOpenBytes/o",
       "state" : {
-        "revision" : "f0ef1e44a79443782f69b5dcab08bdadcb787faa",
-        "version" : "0.3.0"
+        "revision" : "7751d08c5db1c7e4f339289dce1e92b033114ffd",
+        "version" : "1.0.0"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xOpenBytes/t",
       "state" : {
-        "revision" : "78294df737c524f40267bca42beb8e10ca28aa41",
-        "version" : "0.2.0"
+        "revision" : "f4b8f43622a8b772d995210428dd2b3eb66904cd",
+        "version" : "1.0.1"
       }
     }
   ],

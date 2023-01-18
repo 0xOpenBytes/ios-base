@@ -14,33 +14,35 @@ struct RootView: View {
         case profile
     }
 
-    @ObservedObject var cartography: CartographyPath
-
-    @State private var selection: Tab = .home
+    @ObservedObject var navigation: Navigation
 
     var body: some View {
-        CartographyView(path: cartography) {
-            TabView(selection: $selection) {
+        TabView(selection: $navigation.tab) {
+            CartographyView(path: navigation.home) {
                 HomeScreen()
-                    .tag(Tab.home)
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+            }
+            .tag(Tab.home)
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
 
+            CartographyView(path: navigation.search) {
                 SearchScreen()
-                    .tag(Tab.search)
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
+            }
+            .tag(Tab.search)
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
 
+            CartographyView(path: navigation.profile) {
                 ProfileScreen()
-                    .tag(Tab.profile)
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
+            }
+            .tag(Tab.profile)
+            .tabItem {
+                Image(systemName: "person")
+                Text("Profile")
             }
         }
     }
@@ -48,11 +50,12 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Navigation.use { nav -> RootView in
-            nav.isPreview = true
-            nav.path = CartographyPath()
+        Navigation.shared.use { navigation -> RootView in
+            navigation.home = CartographyPath(id: "home.preview")
+            navigation.search = CartographyPath(id: "search.preview")
+            navigation.profile = CartographyPath(id: "profile.preview")
 
-            return RootView(cartography: Navigation.path)
+            return RootView(navigation: navigation)
         }
     }
 }

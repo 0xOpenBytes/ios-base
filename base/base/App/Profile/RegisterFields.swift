@@ -27,7 +27,7 @@ struct RegisterFields: View {
     }
 }
 
-struct RegisterScreen_Previews: PreviewProvider {
+struct RegisterFields_Previews: PreviewProvider {
     static var previews: some View {
         RegisterFields(
             username: .constant(""),

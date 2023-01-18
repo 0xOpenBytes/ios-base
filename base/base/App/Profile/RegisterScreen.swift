@@ -1,5 +1,5 @@
 //
-//  LoginScreen.swift
+//  RegisterScreen.swift
 //  base
 //
 //  Created by Rob Maltese on 12/18/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginScreen: View {
+struct RegisterScreen: View {
     @ObservedObject var registerViewModel: RegisterViewModel
 
     @FocusState var isFocused: Bool
@@ -57,9 +57,9 @@ struct LoginScreen: View {
     }
 }
 
-struct LoginScreen_Previews: PreviewProvider {
+struct RegisterScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen(
+        RegisterScreen(
             registerViewModel: RegisterViewModel(
                 registerNetworking: SuccessMockRegisterService()
             )

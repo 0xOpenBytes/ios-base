@@ -11,23 +11,26 @@ struct ProfileScreen: View {
     @ObservedObject var settings: AppSettings = AppSettings.shared
 
     var body: some View {
-        if let user = settings.user {
-            VStack {
-                Text("Logged in: \(user.username)")
+        Group {
+            if let user = settings.user {
+                VStack {
+                    Text("Logged in: \(user.username)")
 
-                Button(
-                    "Logout",
-                    role: .destructive,
-                    action: { settings.user = nil }
+                    Button(
+                        "Logout",
+                        role: .destructive,
+                        action: { settings.user = nil }
+                    )
+                }
+            } else {
+                RegisterScreen(
+                    registerViewModel: RegisterViewModel(
+                        registerNetworking: SuccessMockRegisterService() // TODO: (base-Template) Update to Production
+                    )
                 )
             }
-        } else {
-            LoginScreen(
-                registerViewModel: RegisterViewModel(
-                    registerNetworking: SuccessMockRegisterService() // TODO: (base-Template) Update to Production
-                )
-            )
         }
+        .navigationTitle("Profile")
     }
 }
 
