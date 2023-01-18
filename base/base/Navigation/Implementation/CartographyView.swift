@@ -56,8 +56,7 @@ struct CartographyView<RootView: View>: View {
 
 extension CartographyView {
     static func preview(_ content: @escaping () -> RootView) -> CartographyView {
-        Navigation.isPreview = true
-        Navigation.path = CartographyPath()
+        Navigation.shared.isPreview = true
 
         return CartographyView(path: Navigation.path, rootView: content)
     }

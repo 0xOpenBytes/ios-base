@@ -57,7 +57,7 @@ extension AuthNetworking {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
 
-        let (data, respone) = try await Network.post(
+        let dataResponse = try await Network.post(
             url: baseURL.appendingPathComponent("register"),
             body: try encoder.encode(payload),
             headerFields: [
@@ -67,13 +67,13 @@ extension AuthNetworking {
         )
 
         // Check Response
-        let httpResponse = respone as? HTTPURLResponse
+        let httpResponse = dataResponse.response as? HTTPURLResponse
 
         guard httpResponse?.statusCode == 200 else {
             throw AuthError.validation(reason: "Status code was not 200, but was: '\(httpResponse?.statusCode ?? -1)'")
         }
 
-        guard let data = data else {
+        guard let data = dataResponse.data else {
             throw AuthError.noData
         }
 

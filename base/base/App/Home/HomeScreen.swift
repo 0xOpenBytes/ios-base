@@ -27,8 +27,8 @@ struct HomeScreen: View {
                         .padding()
                 }
             )
-            Text("Hello, \(settings.user?.username ?? "World")!")
         }
+        .navigationTitle("Hello, \(settings.user?.username ?? "World")!")
     }
 }
 

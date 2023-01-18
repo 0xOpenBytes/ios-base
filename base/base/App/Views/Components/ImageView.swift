@@ -30,7 +30,7 @@ class ImageViewModel: ObservableObject {
 
         do {
             guard
-                let data = try await Network.get(url: url).0,
+                let data = try await Network.get(url: url).data,
                 let imageData = UIImage(data: data)
             else { return nil }
 

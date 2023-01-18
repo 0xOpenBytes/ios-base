@@ -64,6 +64,7 @@ struct SearchScreen: View {
                 Text(date, format: .dateTime)
             }
         )
+        .navigationTitle("Search")
     }
 }
 
