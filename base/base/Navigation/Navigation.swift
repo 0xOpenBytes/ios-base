@@ -22,7 +22,7 @@ public final class Navigation: ObservableObject {
         Navigation.shared.use { navigation in
             switch navigation.tab {
             case .home:     return navigation.home
-            case .search:  return navigation.search
+            case .search:   return navigation.search
             case .profile:  return navigation.profile
             }
         }
