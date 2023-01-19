@@ -7,14 +7,4 @@
 
 import Foundation
 
-protocol AuthNetworking {
-    var baseURL: URL { get }
-    var token: String? { get }
-
-    mutating func register(
-        name: String,
-        email: String,
-        password: String,
-        confirmationPassword: String
-    ) async throws -> RegisterResponse
-}
+protocol AuthNetworking { }
