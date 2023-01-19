@@ -13,7 +13,7 @@ import Foundation
  */
 class RegisterViewModel: ObservableObject {
     private var registerNetworking: RegisterNetworking
-    private var registerTask: Task<Void, Error>?
+    private var registerTask: Task<Void, Never>?
 
     @Published var username = ""
     @Published var email = ""
@@ -28,11 +28,12 @@ class RegisterViewModel: ObservableObject {
         email.isEmpty || password.isEmpty
     }
 
-    /// Triggered by the `LoginScreen` view submit button,
+    /// Triggered by the `RegisterScreen` view submit button,
     /// and sends the required parameters to the network layer function,
     /// and assigns the return to `AppSettings.shared.user`.
-    func registerUser() {
-        registerTask = Task {
+    @discardableResult
+    func registerUser() -> Task<Void, Never> {
+        let task = Task {
             do {
                 let user = try await registerNetworking.register(
                     username: username,
@@ -56,6 +57,10 @@ class RegisterViewModel: ObservableObject {
                 handle(error: error)
             }
         }
+
+        registerTask = task
+
+        return task
     }
 
     private func handle(error: Error) {
