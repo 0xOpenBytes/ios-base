@@ -16,15 +16,21 @@ final class RegisterViewModelTests: XCTestCase {
         AppSettings.shared.user = nil
     }
 
-    func testSuccessRegister() throws {
+    func testSuccessRegister() async throws {
         // When
         let viewModel = RegisterViewModel(registerNetworking: SuccessMockRegisterService())
 
         // Then
-        viewModel.registerUser()
+        let task = viewModel.registerUser()
+
+        // Wait for the task to finish
+        await task.value
 
         // Expect
-        XCTAssertNil(AppSettings.shared.user)
+        XCTAssertNotNil(AppSettings.shared.user)
+
+        // Finally
+        AppSettings.shared.user = nil
     }
 
     func testNoDataRegisterFailure() throws {

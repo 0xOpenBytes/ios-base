@@ -59,11 +59,7 @@ extension AuthNetworking {
 
         let dataResponse = try await Network.post(
             url: baseURL.appendingPathComponent("register"),
-            body: try encoder.encode(payload),
-            headerFields: [
-                "Content-Type": "application/json; charset=utf-8",
-                "Accept": "application/json"
-            ]
+            body: try encoder.encode(payload)
         )
 
         // Check Response
