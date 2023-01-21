@@ -40,6 +40,10 @@ The OpenBytes template for iOS projects using SwiftUI
 
 ## Getting Started
 
+### [Installing Xcodegen](https://github.com/yonaskolb/XcodeGen#installing)
+
+`brew install xcodegen`
+
 ### Renaming
 
 There is a some scripts to help rename base to whatever project name you want.
