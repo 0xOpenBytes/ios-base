@@ -1,11 +1,11 @@
-# ios-base
+# ios-TestProjectName
 
 The OpenBytes template for iOS projects using SwiftUI
 
 ## Project
 
 ### Structure
-- base
+- TestProjectName
     - App: SwiftUI App and Views
     - Data
         - Mock: Static mock data and json reading functionality.
@@ -24,7 +24,7 @@ The OpenBytes template for iOS projects using SwiftUI
     - Preview Content
     - Settings: Shared app data and state.
     - Utilities: Miscellaneous app utilities. 
-- baseTests
+- TestProjectNameTests
     - Adapters: Test Network to Device and Device to Network transformations.
     - Persistence: Tests for Persistence and Caching.
     - UserRegistration: Tests for register using ViewModels and DI.
@@ -46,7 +46,7 @@ The OpenBytes template for iOS projects using SwiftUI
 
 ### Renaming
 
-There is a some scripts to help rename base to whatever project name you want.
+There is a some scripts to help rename TestProjectName to whatever project name you want.
 
 - Clone the templated repository
 - run `./rename.sh`
