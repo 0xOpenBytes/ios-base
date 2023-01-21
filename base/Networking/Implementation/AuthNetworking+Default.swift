@@ -10,7 +10,7 @@ import Foundation
 extension AuthNetworking {
     var tokenFileName: String { "base.token" }
 
-    var baseURL: URL {
+    var authURL: URL {
         URL(string: "AUTH_URL")! // TODO: (base-Template) Change AUTH_URL to valid URL
     }
 
@@ -58,7 +58,7 @@ extension AuthNetworking {
         encoder.dateEncodingStrategy = .iso8601
 
         let dataResponse = try await Network.post(
-            url: baseURL.appendingPathComponent("register"),
+            url: authURL.appendingPathComponent("register"),
             body: try encoder.encode(payload)
         )
 
