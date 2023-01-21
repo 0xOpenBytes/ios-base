@@ -19,6 +19,7 @@ targets:
     info:
         path: base/Info.plist
         properties:
+          UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
           UILaunchScreen: [UILaunchScreen: []]
     type: application
     platform: iOS
