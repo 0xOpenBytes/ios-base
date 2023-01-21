@@ -1,6 +1,6 @@
-name: base
+name: TestProjectName
 options:
-  bundleIdPrefix: com.base
+  bundleIdPrefix: com.TestProjectName
 packages:
     Fork:
         url: https://github.com/0xLeif/Fork
@@ -12,19 +12,19 @@ packages:
         url: https://github.com/0xOpenBytes/c
         from: 3.0.0
 targets:
-  base:
+  TestProjectName:
     scheme:
       testTargets:
-        - baseTests
+        - TestProjectNameTests
     info:
-        path: base/Info.plist
+        path: TestProjectName/Info.plist
         properties:
           UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
           UILaunchScreen: [UILaunchScreen: []]
     type: application
     platform: iOS
     deploymentTarget: "16.0"
-    sources: [base]
+    sources: [TestProjectName]
     dependencies:
       - package: Fork
       - package: o
@@ -39,14 +39,14 @@ targets:
                     echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
                     fi
           name: Swiftlint
-          basedOnDependencyAnalysis: false
+          TestProjectNamedOnDependencyAnalysis: false
 
-  baseTests:
+  TestProjectNameTests:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: "16.0"
-    sources: [baseTests]
+    sources: [TestProjectNameTests]
     info:
-        path: baseTests/Info.plist
+        path: TestProjectNameTests/Info.plist
     dependencies:
-        - target: base
+        - target: TestProjectName
