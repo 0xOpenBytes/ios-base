@@ -15,9 +15,11 @@ targets:
   base:
     scheme:
       testTargets:
-        - MyUnitTests
+        - baseTests
     info:
         path: base/Info.plist
+        properties:
+          UILaunchScreen: [UILaunchScreen: []]
     type: application
     platform: iOS
     deploymentTarget: "16.0"
@@ -27,12 +29,23 @@ targets:
       - package: o
       - package: c
     postCompileScripts:
-        - script: |
+        - script:
+          script: |
                     export PATH="$PATH:/opt/homebrew/bin"
                     if which swiftlint > /dev/null; then
-                      swiftlint
+                    swiftlint
                     else
-                      echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+                    echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
                     fi
+          name: Swiftlint
+          basedOnDependencyAnalysis: false
+
   baseTests:
-    sources: baseTests
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [baseTests]
+    info:
+        path: baseTests/Info.plist
+    dependencies:
+        - target: base
