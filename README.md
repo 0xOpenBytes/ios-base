@@ -37,3 +37,17 @@ The OpenBytes template for iOS projects using SwiftUI
   - Allows us to transform types from one to another while also providing us the various caching options.
 - [Fork](https://github.com/0xLeif/Fork)
   - Fork allows us to run multiple asynchronous tasks at the same time.
+
+## Getting Started
+
+### [Installing Xcodegen](https://github.com/yonaskolb/XcodeGen#installing)
+
+`brew install xcodegen`
+
+### Renaming
+
+There is a some scripts to help rename base to whatever project name you want.
+
+- Clone the templated repository
+- run `./rename.sh`
+- Enter a project name

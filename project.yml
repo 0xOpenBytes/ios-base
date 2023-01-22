@@ -1,0 +1,52 @@
+name: base
+options:
+  bundleIdPrefix: com.base
+packages:
+    Fork:
+        url: https://github.com/0xLeif/Fork
+        from: 1.0.0
+    o:
+        url: https://github.com/0xOpenBytes/o
+        from: 1.0.0
+    c:
+        url: https://github.com/0xOpenBytes/c
+        from: 3.0.0
+targets:
+  base:
+    scheme:
+      testTargets:
+        - baseTests
+    info:
+        path: base/Info.plist
+        properties:
+          UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+          UILaunchScreen: [UILaunchScreen: []]
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [base]
+    dependencies:
+      - package: Fork
+      - package: o
+      - package: c
+    postCompileScripts:
+        - script:
+          script: |
+                    export PATH="$PATH:/opt/homebrew/bin"
+                    if which swiftlint > /dev/null; then
+                    swiftlint
+                    else
+                    echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+                    fi
+          name: Swiftlint
+          basedOnDependencyAnalysis: false
+
+  baseTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [baseTests]
+    info:
+        path: baseTests/Info.plist
+    dependencies:
+        - target: base
