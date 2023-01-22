@@ -4,9 +4,7 @@ name: SwiftLint
     paths:
       - .github/workflows/swiftlint.yml
       - .swiftlint.yml
-      - "base/**/*.swift"
-      - "baseTests/**/*.swift"
-      - Swish/Sources/**/*.swift
+      - "**/*.swift"
 jobs:
   SwiftLint:
     runs-on: ubuntu-latest
