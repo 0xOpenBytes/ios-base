@@ -3,12 +3,12 @@ import ShGit
 import Rainbow
 import Foundation
 
-do {
+struct GitRepoNotCleanError: Error {}
 
+do {
   let git = Git()
   guard try git.isClean()
   else {
-    struct GitRepoNotCleanError: Error {}
     throw GitRepoNotCleanError()
   }
 
