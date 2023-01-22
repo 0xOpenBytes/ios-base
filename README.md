@@ -49,8 +49,6 @@ The OpenBytes template for iOS projects using SwiftUI
 
 Learn more about [Swish](https://www.github.com/FullQueueDeveloper/Swish) and [Xcodegen](https://github.com/yonaskolb/XcodeGen)
 
-`brew install xcodegen`
-
 ### Renaming
 
 There is a some scripts to help rename base to whatever project name you want.
