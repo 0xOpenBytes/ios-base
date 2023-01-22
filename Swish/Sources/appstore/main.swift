@@ -1,13 +1,15 @@
 import Sh
 import ShGit
 import Rainbow
+import Foundation
 
 do {
 
   let git = Git()
   guard try git.isClean()
   else {
-    throw Errors.gitRepoNotClean
+    struct GitRepoNotCleanError: Error {}
+    throw GitRepoNotCleanError()
   }
 
   let logRoot = "Swish/logs"

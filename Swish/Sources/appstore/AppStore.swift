@@ -5,10 +5,6 @@ import Rainbow
 
 struct AppStore {
 
-  enum Errors: Error {
-    case gitRepoNotClean
-  }
-
   let secrets: Secrets, logRoot: String, artifactRoot: String
   init(secrets: Secrets, logRoot: String, artifactRoot: String) {
     self.secrets = secrets
