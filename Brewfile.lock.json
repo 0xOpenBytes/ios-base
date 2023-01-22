@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "brew": {
+      "fullqueuedeveloper/swish/swish": {
+        "version": "1.0.1",
+        "bottle": false
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "ventura": {
+        "HOMEBREW_VERSION": "3.6.20-14-g31ed690",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "306d67b737965c92e37bd8011b492f57e48281c8",
+        "CLT": "14.2.0.0.1.1668646533",
+        "Xcode": "14.1",
+        "macOS": "13.1"
+      }
+    }
+  }
+}
