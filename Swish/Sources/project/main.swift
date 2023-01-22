@@ -1,5 +1,4 @@
-import Sh
-import Foundation
+import Shared
 
 // generate the Xcode project
 
