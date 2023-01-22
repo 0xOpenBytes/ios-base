@@ -1,7 +1,4 @@
-import Sh
-import ShGit
-import Rainbow
-import Foundation
+import Shared
 
 do {
 
