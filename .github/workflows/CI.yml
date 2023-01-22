@@ -17,8 +17,7 @@ jobs:
         with:
           xcode-version: "14.1"
       - run: brew bundle
-      - run: swift package --package-path Swish resolve
-      - run: swift build --package-path Swish
+      - run: swish -b
       - name: Build
         run: >
           xcodebuild build -project base.xcodeproj -scheme base clean
