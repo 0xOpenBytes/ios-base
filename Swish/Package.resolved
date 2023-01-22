@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Rainbow",
+        "repositoryURL": "https://github.com/onevcat/Rainbow",
+        "state": {
+          "branch": null,
+          "revision": "e0dada9cd44e3fa7ec3b867e49a8ddbf543e3df3",
+          "version": "4.0.1"
+        }
+      },
+      {
+        "package": "Sh",
+        "repositoryURL": "https://github.com/FullQueueDeveloper/Sh.git",
+        "state": {
+          "branch": null,
+          "revision": "fc6bfa4c6562436d1bc681e205ceeca78662d966",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "ShGit",
+        "repositoryURL": "https://github.com/FullQueueDeveloper/ShGit.git",
+        "state": {
+          "branch": null,
+          "revision": "5864984250d268aeb6afd8326eae9b568015b3a2",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "ShXcrun",
+        "repositoryURL": "https://github.com/FullQueueDeveloper/ShXcrun.git",
+        "state": {
+          "branch": null,
+          "revision": "6872937e755fdfc863d0e5874d7b820511e60a30",
+          "version": "0.1.9"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
