@@ -58,3 +58,19 @@ There is a some scripts to help rename base to whatever project name you want.
 - Clone the templated repository
 - run `./rename.sh`
 - Enter a project name
+
+## Continuing onward
+
+### Regenerate the project
+
+    swish project
+
+### Pushing to the App Store
+
+This script expects `APPLE_TEAM_ID`, `APPLOADER_USERNAME` and `APPLOADER_PASSWORD` to be present in the environment.
+
+It doesn't have to stay that way. Modify `Swish/Sources/appstore/Secrets.swift` to use an API key, or perhaps fetch credentials from a password manager like 1Password using [Sh1Password](https://github.com/FullQueueDeveloper/Sh1Password).
+
+When that's settled, you can run
+
+    swish appstore
