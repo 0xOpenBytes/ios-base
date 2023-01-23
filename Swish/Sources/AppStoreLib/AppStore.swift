@@ -2,17 +2,26 @@ import Foundation
 import Sh
 import ShXcrun
 import Rainbow
+import ShGit
 
-struct AppStore {
+struct GitRepoNotCleanError: Error {}
+
+public struct AppStore {
 
   let secrets: Secrets, logRoot: String, artifactRoot: String
-  init(secrets: Secrets, logRoot: String, artifactRoot: String) {
-    self.secrets = secrets
+  public init(logRoot: String, artifactRoot: String) throws {
+    self.secrets = try Secrets()
     self.logRoot = logRoot
     self.artifactRoot = artifactRoot
   }
 
-  func build() throws {
+  public func build() throws {
+    let git = Git()
+    guard try git.isClean()
+    else {
+      throw GitRepoNotCleanError()
+    }
+
     print("=== Build start ===".cyan)
     let archivePath = "\(artifactRoot)/base.xcarchive"
     let exportOptionsPath = "\(artifactRoot)/exportOptions.plist"

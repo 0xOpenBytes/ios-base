@@ -1,10 +1,10 @@
 import Foundation
 
-struct Secrets {
+public struct Secrets {
   let apploaderUsername: String
   let apploaderPassword: String
   let appleTeamID: String
-  init() throws {
+  public init() throws {
     guard let apploaderUsername = ProcessInfo.processInfo.environment["APPLOADER_USERNAME"],
       let apploaderPassword = ProcessInfo.processInfo.environment["APPLOADER_USERNAME"] else {
       throw Errors.missingApploaderCredentials

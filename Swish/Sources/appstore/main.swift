@@ -1,21 +1,15 @@
-import Shared
+import AppStoreLib
+import Foundation
 
-struct GitRepoNotCleanError: Error {}
 
-do {
-  let git = Git()
-  guard try git.isClean()
-  else {
-    throw GitRepoNotCleanError()
-  }
+let logRoot = "Swish/logs"
+let artifactRoot = "Swish/artifacts"
 
-  let logRoot = "Swish/logs"
-  let artifactRoot = "Swish/artifacts"
-  try sh(.terminal, "mkdir -p \(logRoot)")
-  try sh(.terminal, "mkdir -p \(artifactRoot)")
+try FileManager.default.createDirectory(atPath: logRoot,
+                                        withIntermediateDirectories: true)
+try FileManager.default.createDirectory(atPath: artifactRoot,
+                                        withIntermediateDirectories: true)
 
-  try AppStore(secrets: Secrets(), logRoot: logRoot, artifactRoot: artifactRoot).build()
-
-} catch {
-  print("error".red, error)
-}
+try AppStore(logRoot: logRoot,
+             artifactRoot: artifactRoot)
+.build()
