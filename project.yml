@@ -20,7 +20,7 @@ schemes:
   Screenshots:
     build:
       targets:
-        Abase: all
+        base: all
         baseUITests: [run, test]
     test:
       targets:
