@@ -2,15 +2,15 @@ import Foundation
 import Sh
 
 extension Screenshots {
-  func trimAll() throws {
-    try FileManager.default.createDirectory(atPath: "\(pngsPath)/\(Device.proMax.name)-trimmed/", withIntermediateDirectories: true)
+  func trimAll(device: Device) throws {
+    try FileManager.default.createDirectory(atPath: "\(pngsPath)/\(device.name)-trimmed/", withIntermediateDirectories: true)
     try FileManager.default
-      .contentsOfDirectory(atPath: "\(pngsPath)/\(Device.proMax.name)")
+      .contentsOfDirectory(atPath: "\(pngsPath)/\(device.name)")
       .forEach({ file in
         try trimOne(
-          screenshotPath: "\(pngsPath)/\(Device.proMax.name)/\(file)",
-          maskPath: "tmp/Screenshots/\(Device.proMax.name)-masked.png",
-          outputPath: "\(pngsPath)/\(Device.proMax.name)-trimmed/\(file)")
+          screenshotPath: "\(pngsPath)/\(device.name)/\(file)",
+          maskPath: "\(masksPath)/\(device.name)-masked.png",
+          outputPath: "\(pngsPath)/\(device.name)-trimmed/\(file)")
       })
   }
 }

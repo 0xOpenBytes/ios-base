@@ -17,11 +17,18 @@ public struct Screenshots {
   }
 
   public func go() throws {
-
-    try sh(.terminal, "rm -fr \(derivedDataPath) \(pngsPath) \(logsPath)")
-
+    try clearDirectories()
     try take()
-    try getMask()
-    try trimAll()
+    
+    try applyMask(for: .proMax)
+  }
+  
+  func applyMask(for device: Device) throws {
+    try device.createMask(at: masksPath)
+    try trimAll(device: device)
+  }
+  
+  private func clearDirectories() throws {
+    try sh(.terminal, "rm -fr \(derivedDataPath) \(pngsPath) \(logsPath) \(masksPath)")
   }
 }
