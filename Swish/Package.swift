@@ -6,7 +6,7 @@ let package = Package(
   name: "Scripts",
   platforms: [.macOS(.v12)],
   products: [
-    .executable(name: "appstore", targets: ["AppStore"]),
+    .executable(name: "appstore", targets: ["appstore"]),
     .executable(name: "generate", targets: ["generate"]),
   ],
   dependencies: [
@@ -19,7 +19,7 @@ let package = Package(
             dependencies: ["Sh", "ShGit", "ShXcrun"]),
     .target(name: "ProjectLib",
             dependencies: ["Sh"]),
-    .executableTarget(name: "AppStore",
+    .executableTarget(name: "appstore",
                       dependencies: ["AppStoreLib"]),
     .executableTarget(name: "generate",
                       dependencies: ["ProjectLib"]),
