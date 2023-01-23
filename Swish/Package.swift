@@ -9,6 +9,7 @@ let package = Package(
     .executable(name: "appstore", targets: ["appstore"]),
     .executable(name: "generate", targets: ["generate"]),
     .executable(name: "screenshots", targets: ["screenshots"]),
+
   ],
   dependencies: [
     .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
