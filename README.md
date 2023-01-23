@@ -51,7 +51,7 @@ Learn more about [Swish](https://www.github.com/FullQueueDeveloper/Swish) and [X
 
 ### Renaming
 
-There is a some scripts to help rename base to whatever project name you want.
+There are some scripts to help rename base to whatever project name you want.
 
 - Clone the templated repository
 - run `./rename.sh`
