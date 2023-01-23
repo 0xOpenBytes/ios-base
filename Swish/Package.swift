@@ -6,9 +6,8 @@ let package = Package(
   name: "Scripts",
   platforms: [.macOS(.v12)],
   products: [
-    .executable(name: "appstore", targets: ["appstore"]),
-    .executable(name: "project", targets: ["project"]),
-    .library(name: "Shared", type: .static, targets: ["Shared"])
+    .executable(name: "appstore", targets: ["AppStore"]),
+    .executable(name: "generate", targets: ["generate"]),
   ],
   dependencies: [
     .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
@@ -16,17 +15,13 @@ let package = Package(
     .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
   ],
   targets: [
-    .target(
-        name: "Shared",
-        dependencies: ["Sh", "ShGit", "ShXcrun"]
-    ),
-    .executableTarget(
-      name: "appstore",
-      dependencies: ["Shared"]
-    ),
-    .executableTarget(
-      name: "project",
-      dependencies: ["Shared"]
-    ),
+    .target(name: "AppStoreLib",
+            dependencies: ["Sh", "ShGit", "ShXcrun"]),
+    .target(name: "ProjectLib",
+            dependencies: ["Sh"]),
+    .executableTarget(name: "AppStore",
+                      dependencies: ["AppStoreLib"]),
+    .executableTarget(name: "generate",
+                      dependencies: ["ProjectLib"]),
   ]
 )
