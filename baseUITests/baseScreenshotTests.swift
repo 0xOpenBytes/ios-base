@@ -1,5 +1,4 @@
 import XCTest
-import base
 
 final class baseScreenshotTests: XCTestCase {
 
