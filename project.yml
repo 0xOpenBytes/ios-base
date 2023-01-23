@@ -11,6 +11,23 @@ packages:
   c:
     url: https://github.com/0xOpenBytes/c
     from: 3.0.0
+schemes:
+  base:
+    build:
+      targets:
+        base: all
+        baseUITests: [run, test]
+  Screenshots:
+    build:
+      targets:
+        Abase: all
+        baseUITests: [run, test]
+    test:
+      targets:
+        - baseUITests
+    run:
+      environmentVariables:
+        SCREENSHOTS: "YES"
 targets:
   base:
     scheme:
