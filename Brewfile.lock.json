@@ -43,11 +43,18 @@
             }
           }
         }
+      },
+      "chargepoint/xcparse/xcparse": {
+        "version": "2.3.1",
+        "bottle": false
       }
     },
     "tap": {
       "fullqueuedeveloper/swish": {
         "revision": "9b92e912e8a3b6cac7f922cdfae1790ee0bfc4a7"
+      },
+      "chargepoint/xcparse": {
+        "revision": "ebde7613d1b59ea40cc39cf0bf3110f6db5e18b4"
       }
     }
   },
@@ -56,7 +63,7 @@
       "ventura": {
         "HOMEBREW_VERSION": "3.6.20-14-g31ed690",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "4613f807315a01c0a7413338faf23c755645e9ad",
+        "Homebrew/homebrew-core": "288dd151eb777a0ad808c5c637927095f023d0ec",
         "CLT": "14.2.0.0.1.1668646533",
         "Xcode": "14.1",
         "macOS": "13.1"

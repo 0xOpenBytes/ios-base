@@ -8,6 +8,7 @@ let package = Package(
   products: [
     .executable(name: "appstore", targets: ["appstore"]),
     .executable(name: "generate", targets: ["generate"]),
+    .executable(name: "screenshots", targets: ["screenshots"]),
   ],
   dependencies: [
     .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
@@ -15,13 +16,17 @@ let package = Package(
     .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
   ],
   targets: [
-    .target(name: "AppStoreLib",
-            dependencies: ["Sh", "ShGit", "ShXcrun"]),
-    .target(name: "ProjectLib",
-            dependencies: ["Sh"]),
     .executableTarget(name: "appstore",
                       dependencies: ["AppStoreLib"]),
+    .target(name: "AppStoreLib",
+            dependencies: ["Sh", "ShGit", "ShXcrun"]),
     .executableTarget(name: "generate",
                       dependencies: ["ProjectLib"]),
+    .target(name: "ProjectLib",
+            dependencies: ["Sh"]),
+    .executableTarget(name: "screenshots",
+                      dependencies: ["ScreenshotsLib"]),
+    .target(name: "ScreenshotsLib",
+            dependencies: ["Sh"]),
   ]
 )
