@@ -1,4 +1,5 @@
 import Sh
+import Foundation
 
 public struct Screenshots {
   let logsPath: String
@@ -30,5 +31,10 @@ public struct Screenshots {
   
   private func clearDirectories() throws {
     try sh(.terminal, "rm -fr \(derivedDataPath) \(pngsPath) \(logsPath) \(masksPath)")
+    
+    try FileManager.default.createDirectory(atPath: logsPath, withIntermediateDirectories: true)
+    try FileManager.default.createDirectory(atPath: derivedDataPath, withIntermediateDirectories: true)
+    try FileManager.default.createDirectory(atPath: pngsPath, withIntermediateDirectories: true)
+    try FileManager.default.createDirectory(atPath: masksPath, withIntermediateDirectories: true)
   }
 }
