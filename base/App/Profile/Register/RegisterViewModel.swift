@@ -28,9 +28,15 @@ class RegisterViewModel: ObservableObject {
         email.isEmpty || password.isEmpty
     }
 
-    /// Triggered by the `RegisterScreen` view submit button,
-    /// and sends the required parameters to the network layer function,
-    /// and assigns the return to `AppSettings.shared.user`.
+    /**
+     Triggered by the `RegisterScreen` views submit button,
+     and sends the required parameters to the network layer function.
+     Upon returning successfully, it assigns the return to the `AppSettings.shared.user`.
+
+     - Returns: `Task<Void, Never>` which is an asynchronous task that will run without returning any value, and will not fail with any error.
+
+     By marking this function `@discardableResult`, it simply hides the warning from the compiler when not using returned values.
+     */
     @discardableResult
     func registerUser() -> Task<Void, Never> {
         let task = Task {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,7 @@
 		8DA57D6E9E69E6F4850E1CAD /* o in Frameworks */ = {isa = PBXBuildFile; productRef = 978FE7AE410BF67855AD6E2C /* o */; };
 		9381FF460754163BCEE220B6 /* c in Frameworks */ = {isa = PBXBuildFile; productRef = 9AC04F5FC84106F485705A7E /* c */; };
 		9804DDC00702AB8F04E7FAE9 /* Adaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6A0028123EF24032812BE7 /* Adaptable.swift */; };
+		B20A1A672980866500EFF2CC /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = B20A1A662980866500EFF2CC /* Documentation.docc */; };
 		B43C5241F8E4B83453B405DD /* baseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562C53D88E57423A4970032 /* baseApp.swift */; };
 		B6EC910EFE4C52652EEDAD21 /* ToastNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C7A14951820E17B719C3F /* ToastNotificationView.swift */; };
 		BCFE1DCDF74BE9B1F9932677 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B1B7F84B106B6F1A20162 /* RootView.swift */; };
@@ -112,6 +113,7 @@
 		837C2BC28DF9A27F44FCEFF8 /* ModalPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenting.swift; sourceTree = "<group>"; };
 		99F2E19EA1043A26B80C01D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BFD6B5F070AB3A1645F0491 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		B20A1A662980866500EFF2CC /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		B94095C1E89260D7C719E97B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		BDD052982611272F2C5721C5 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		BE930F882AAF3F6A5427F81C /* NotifcationCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationCapabilities.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		CDC317849A738C98A25DC6F5 = {
 			isa = PBXGroup;
 			children = (
+				B20A1A662980866500EFF2CC /* Documentation.docc */,
 				702B5C7B7487372334757A9A /* base */,
 				8F4D029FAA71D824A5973DCA /* baseTests */,
 				9E89B9CE2EEC2A4B2F3E9E99 /* Products */,
@@ -563,8 +566,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = AE5CD8FD7B4AC67C8CD37660 /* Build configuration list for PBXProject "base" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -661,6 +662,7 @@
 				4F8A9676778AF11BA0FD84D6 /* DataCaching.swift in Sources */,
 				00DF8BF03A390BFFC268ABA4 /* DiskCapabilities.swift in Sources */,
 				6E8317CC1448DF29D3EBA141 /* ForwardNavigatable.swift in Sources */,
+				B20A1A672980866500EFF2CC /* Documentation.docc in Sources */,
 				C5481522C996B93224899BB7 /* HomeScreen.swift in Sources */,
 				33F7E2CE4031064386BBFA07 /* ImageCache.swift in Sources */,
 				F77860244584D04A77878DF3 /* ImageView.swift in Sources */,
