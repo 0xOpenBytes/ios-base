@@ -45,7 +45,9 @@ struct RegisterScreen: View {
                         .frame(maxWidth: .infinity)
                         .background(
                             RoundedRectangle(cornerRadius: 5)
-                                .foregroundColor(registerViewModel.areFieldsValidated ? Color.gray : Color.blue)
+                                .foregroundColor(
+                                    registerViewModel.areFieldsValidated ? Color.gray : Color.blue
+                                )
                         )
                         .padding([.horizontal, .top])
                 }

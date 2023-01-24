@@ -66,7 +66,9 @@ extension AuthNetworking {
         let httpResponse = dataResponse.response as? HTTPURLResponse
 
         guard httpResponse?.statusCode == 200 else {
-            throw AuthError.validation(reason: "Status code was not 200, but was: '\(httpResponse?.statusCode ?? -1)'")
+            throw AuthError.validation(
+                reason: "Status code was not 200, but was: '\(httpResponse?.statusCode ?? -1)'"
+            )
         }
 
         guard let data = dataResponse.data else {
