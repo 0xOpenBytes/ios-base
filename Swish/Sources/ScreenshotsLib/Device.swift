@@ -1,7 +1,7 @@
 import Foundation
 import Sh
 
-enum Device: CaseIterable  {
+enum Device: CaseIterable {
   case proMax
   case plus
 
@@ -22,7 +22,7 @@ enum Device: CaseIterable  {
       return "Plus"
     }
   }
-  
+
   static func createAllMasks(at masksPath: String) throws {
     try Self.allCases.forEach { try $0.createMask(at: masksPath) }
   }

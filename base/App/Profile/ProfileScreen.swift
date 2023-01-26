@@ -25,7 +25,8 @@ struct ProfileScreen: View {
             } else {
                 RegisterScreen(
                     registerViewModel: RegisterViewModel(
-                        registerNetworking: SuccessMockRegisterService() // TODO: (base-Template) Update to Production
+                        // TODO: (base-Template) Update to Production
+                        registerNetworking: SuccessMockRegisterService()
                     )
                 )
             }
