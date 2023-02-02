@@ -29,6 +29,20 @@ struct HomeScreen: View {
             )
         }
         .navigationTitle("Hello, \(settings.user?.username ?? "World")!")
+        .toolbar {
+            Button(
+                action: {
+                    Navigation.path.modal {
+                        NavigationStack {
+                            AcknowledgmentView()
+                        }
+                    }
+                },
+                label: {
+                    Image(systemName: "info.circle")
+                }
+            )
+        }
     }
 }
 
