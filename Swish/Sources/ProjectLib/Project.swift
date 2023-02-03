@@ -17,7 +17,7 @@ public struct Project {
                                                 //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                                                 //  copies of the Software, and to permit persons to whom the Software is
                                                 //  furnished to do so, subject to the conditions found at the following link:
-                                                //  https://github.com/0xOpenBytes/ios-base/blob/main/LICENSE
+                                                //  https://github.com/0xOpenBytes/ios-BASE/blob/main/LICENSE
                                                 //
                                                 // Created by ___FULLUSERNAME___.
                                                 //  ___FILENAME___
