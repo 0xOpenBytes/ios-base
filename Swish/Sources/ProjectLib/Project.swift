@@ -17,7 +17,7 @@ public struct Project {
                                                 //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                                                 //  copies of the Software, and to permit persons to whom the Software is
                                                 //  furnished to do so, subject to the conditions found at the following link:
-                                                //  https://github.com/0xOpenBytes/ios-testproject/blob/main/LICENSE
+                                                //  https://github.com/0xOpenBytes/ios-base/blob/main/LICENSE
                                                 //
                                                 // Created by ___FULLUSERNAME___.
                                                 //  ___FILENAME___
@@ -45,8 +45,7 @@ public struct Project {
                                                 """
 
     var header: String {
-        // MARK: - This "testproject" should NOT change....
-        if "BASE".lowercased() == "testproject" {
+        if "BASE".lowercased() == "base" {
             return openBytesInitialHeader
         } else {
             return standardUserHeader
@@ -56,6 +55,6 @@ public struct Project {
     public init() {}
     public func generate() throws {
         try sh(.terminal, "xcodegen")
-        try shq(.terminal, "echo '\(header)' > testproject.xcodeproj/xcshareddata/IDETemplateMacros.plist")
+        try shq(.terminal, "echo '\(header)' > base.xcodeproj/xcshareddata/IDETemplateMacros.plist")
     }
 }
