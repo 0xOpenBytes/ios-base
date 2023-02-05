@@ -61,7 +61,7 @@ There are some scripts to help rename base to whatever project name you want.
 
 ### Regenerate the project
 
-    swish project
+    swish xcodeproj
 
 ### Pushing to the App Store
 
