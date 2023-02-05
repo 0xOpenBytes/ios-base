@@ -6,7 +6,8 @@ grep -rli 'NEW_NAME' scripts/rename-base.sh | xargs -I@ sed -i '' "s/NEW_NAME/$p
 
 sh ./scripts/rename-base.sh
 
-xcodegen generate
+swish appicon
+swish xcodeproj
 
 rm -rf scripts
 rm rename.sh
