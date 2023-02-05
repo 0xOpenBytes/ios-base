@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "createxcassets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FullQueueDeveloper/CreateXCAssets.git",
+      "state" : {
+        "revision" : "5599b50bb2944834e0d504cbde6ee755f8c80e30",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "fork",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xLeif/Fork.git",

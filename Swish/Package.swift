@@ -15,14 +15,14 @@ let package = Package(
     .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
     .package(url: "https://github.com/FullQueueDeveloper/ShGit.git", from: "1.0.0"),
     .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
+    .package(url: "https://github.com/FullQueueDeveloper/CreateXCAssets.git", from: "0.1.0"),
     .package(url: "https://github.com/0xLeif/Fork.git", from: "1.0.0"),
     .package(url: "https://github.com/swhitty/SwiftDraw.git", from: "0.13.3"),
   ],
   targets: [
     .executableTarget(name: "appicon",
-      dependencies: ["AppIconLib"]),
-    .target(name: "AppIconLib",
-      dependencies: ["Sh", "Fork", "SwiftDraw"]),
+      dependencies: ["CreateXCAssets"]),
+
     .executableTarget(name: "appstore",
                       dependencies: ["AppStoreLib"]),
     .target(name: "AppStoreLib",
