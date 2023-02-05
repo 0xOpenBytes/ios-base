@@ -21,7 +21,7 @@ jobs:
       - name: Development scripts build
         run: swish -b
       - name: Generate project
-        run: swish generate
+        run: swish xcodeproj
       - name: Build
         run: >
           xcodebuild build -project base.xcodeproj -scheme base clean
