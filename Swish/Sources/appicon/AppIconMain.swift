@@ -1,4 +1,4 @@
-import AppIconLib
+import CreateXCAssets
 
 @main
 struct AppIconMain {
