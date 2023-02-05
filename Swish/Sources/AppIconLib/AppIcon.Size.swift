@@ -12,7 +12,7 @@ extension AppIcon {
     case iPadApp, iPadApp2x
     case iPadPro2x
     case AppStore
-
+    
     var data: Data {
       switch self {
       case .iPhoneNotification2x: return .init(20, .two)
@@ -35,11 +35,11 @@ extension AppIcon {
       case .AppStore: return .init(1024, .one)
       }
     }
-
+    
     struct Data {
       let baseWidth: Decimal
       let scale: AppIcon.Scale
-
+      
       var pixelWidth: Decimal {
         switch scale {
         case .one: return baseWidth
@@ -47,14 +47,18 @@ extension AppIcon {
         case .three: return baseWidth * 3
         }
       }
-
+      
       init(_ baseWidth: Decimal, _ scale: AppIcon.Scale) {
         self.baseWidth = baseWidth; self.scale = scale
       }
     }
-
+    
     var edge: Decimal {
       self.data.pixelWidth
+    }
+    var cgSize: CGSize {
+      .init(width: Double(truncating: self.edge as NSNumber),
+            height: Double(truncating: self.edge as NSNumber))
     }
   }
 }
