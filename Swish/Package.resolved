@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "createxcassets",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/FullQueueDeveloper/CreateXCAssets.git",
-      "state" : {
-        "revision" : "5599b50bb2944834e0d504cbde6ee755f8c80e30",
-        "version" : "0.1.0"
-      }
-    },
-    {
       "identity" : "fork",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0xLeif/Fork.git",
@@ -32,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FullQueueDeveloper/Sh.git",
       "state" : {
-        "revision" : "fc6bfa4c6562436d1bc681e205ceeca78662d966",
-        "version" : "1.0.2"
+        "revision" : "a40bba19d8085761e051fa1f0d5937259fa2e17a",
+        "version" : "1.2.0"
       }
     },
     {
@@ -41,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FullQueueDeveloper/ShGit.git",
       "state" : {
-        "revision" : "5864984250d268aeb6afd8326eae9b568015b3a2",
-        "version" : "1.0.0"
+        "revision" : "b0fab32154eb98da6cb327fefec56729473869a6",
+        "version" : "1.1.0"
       }
     },
     {
@@ -50,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FullQueueDeveloper/ShXcrun.git",
       "state" : {
-        "revision" : "6872937e755fdfc863d0e5874d7b820511e60a30",
-        "version" : "0.1.9"
+        "revision" : "eb83e761ef0cf46e2db054260540ec5ac219ec03",
+        "version" : "0.2.0"
       }
     },
     {
@@ -61,6 +52,15 @@
       "state" : {
         "revision" : "cabfd9fe8199fedeb75f259fb30268cfbc2042c3",
         "version" : "0.13.3"
+      }
+    },
+    {
+      "identity" : "swishxcassets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FullQueueDeveloper/SwishXCAssets.git",
+      "state" : {
+        "revision" : "efa97e96c9d9a92a1095dc6fd7bcde6d91bb31c5",
+        "version" : "0.2.0"
       }
     }
   ],
