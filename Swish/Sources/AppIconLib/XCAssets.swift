@@ -1,4 +1,5 @@
 import Foundation
+import Fork
 import Sh
 
 public struct XCAssets {
@@ -11,10 +12,10 @@ public struct XCAssets {
 
   public func render() async throws {
     try await sh(.terminal, "mkdir -p \(outputDir)/AppIcon.xcassets/AppIcon.appiconset")
-    for size in AppiconSize.allCases {
+
+    try await AppiconSize.allCases.asyncForEach { size in
       let pngPath = "\(outputDir)/AppIcon.xcassets/AppIcon.appiconset/\(filename(for: size))"
       try await sh(.terminal, "inkscape -o \(pngPath) -w \(size.edge) -h \(size.edge) \(inputSVG)")
-
     }
 
     try XCAssetsJSON.xcassetsContents.data(using: .utf8)!.write(to: URL(fileURLWithPath: "\(outputDir)/AppIcon.xcassets/Contents.json"))
