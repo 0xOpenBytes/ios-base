@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "o",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/0xOpenBytes/o",
+      "state" : {
+        "revision" : "ff49e4ab5aa8da9fbae26242aec49faeed438cf4",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "rainbow",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Rainbow",
