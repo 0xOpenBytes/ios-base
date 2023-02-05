@@ -1,9 +1,9 @@
 import AppIconLib
 
 @main
-struct AppIcon {
+struct AppIconMain {
   static func main() async throws {
     let svgPath = "Swish/AppIcon.svg"
-    try await XCAssets(inputSVG: svgPath, outputDir: "base").render()
+    try await AppIcon(inputSVG: svgPath, outputDir: "base").render()
   }
 }
