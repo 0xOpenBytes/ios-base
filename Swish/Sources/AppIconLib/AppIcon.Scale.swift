@@ -13,6 +13,7 @@ extension AppIcon {
       case .three: return "@3x"
       }
     }
+    
     var cgFloat: CGFloat {
       switch self {
       case .one: return 1

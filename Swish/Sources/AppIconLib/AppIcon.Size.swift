@@ -56,9 +56,10 @@ extension AppIcon {
     var edge: Decimal {
       self.data.pixelWidth
     }
+    
     var cgSize: CGSize {
-      .init(width: Double(truncating: self.edge as NSNumber),
-            height: Double(truncating: self.edge as NSNumber))
+      .init(width: Double(truncating: self.data.baseWidth as NSNumber),
+            height: Double(truncating: self.data.baseWidth as NSNumber))
     }
   }
 }

@@ -21,11 +21,13 @@ public struct AppIcon {
     }
     
     try await AppIcon.Size.allCases.asyncForEach { size in
-      let pngPath = "\(outputDir)/AppIcon.xcassets/AppIcon.appiconset/\(filename(for: size))"
+      let filename = filename(for: size)
+      let pngPath = "\(outputDir)/AppIcon.xcassets/AppIcon.appiconset/\(filename)"
 
-      
-      guard let pngData = svg.rasterize(with: size.cgSize, scale: size.data.scale.cgFloat).pngData else {
-        fatalError("could not render app icon at size: seize")
+      let image = svg.rasterize(with: size.cgSize, scale: size.data.scale.cgFloat)
+      print(filename, size.cgSize, size.data.scale, size.data.scale.cgFloat)
+      guard let pngData = image.pngData else {
+        fatalError("could not render app icon at size: \(size)")
       }
       try pngData.write(to: URL(fileURLWithPath: pngPath))
     }
