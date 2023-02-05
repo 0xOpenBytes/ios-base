@@ -1,4 +1,4 @@
-import CreateXCAssets
+import SwishXCAssets
 
 @main
 struct AppIconMain {
