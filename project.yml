@@ -41,7 +41,11 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
-    sources: [base]
+    sources:
+        - path: base
+          name: base
+          excludes:
+            - "Swish"
     dependencies:
       - package: Fork
       - package: o

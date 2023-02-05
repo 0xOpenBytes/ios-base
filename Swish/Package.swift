@@ -17,6 +17,7 @@ let package = Package(
     .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
     .package(url: "https://github.com/FullQueueDeveloper/SwishXCAssets.git", from: "0.2.0"),
     .package(url: "https://github.com/swhitty/SwiftDraw.git", from: "0.13.3"),
+    .package(url: "https://github.com/0xOpenBytes/o", from: "2.0.0")
   ],
   targets: [
     .executableTarget(name: "appicon",
@@ -29,7 +30,7 @@ let package = Package(
     .executableTarget(name: "xcodeproj",
                       dependencies: ["ProjectLib"]),
     .target(name: "ProjectLib",
-            dependencies: ["Sh"]),
+            dependencies: ["Sh", "o"]),
     .executableTarget(name: "screenshots",
                       dependencies: ["ScreenshotsLib"]),
     .target(name: "ScreenshotsLib",
