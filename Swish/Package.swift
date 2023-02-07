@@ -16,6 +16,7 @@ let package = Package(
     .package(url: "https://github.com/FullQueueDeveloper/ShGit.git", from: "1.0.0"),
     .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
     .package(url: "https://github.com/FullQueueDeveloper/SwishXCAssets.git", from: "0.2.0"),
+    .package(url: "https://github.com/FullQueueDeveloper/SwishAppStore.git", from: "0.1.1"),
     .package(url: "https://github.com/swhitty/SwiftDraw.git", from: "0.13.3"),
     .package(url: "https://github.com/0xOpenBytes/o", from: "2.0.0")
   ],
@@ -24,9 +25,7 @@ let package = Package(
       dependencies: ["SwishXCAssets"]),
 
     .executableTarget(name: "appstore",
-                      dependencies: ["AppStoreLib"]),
-    .target(name: "AppStoreLib",
-            dependencies: ["Sh", "ShGit", "ShXcrun"]),
+                      dependencies: ["SwishAppStore"]),
     .executableTarget(name: "xcodeproj",
                       dependencies: ["ProjectLib"]),
     .target(name: "ProjectLib",
