@@ -9,5 +9,6 @@ try Screenshots(
   logsPath: logsPath,
   derivedDataPath: derivedDataPath,
   pngsPath: pngsPath,
-  masksPath: masksPath
+  masksPath: masksPath,
+  scheme: "Screenshots"
 ).go()
