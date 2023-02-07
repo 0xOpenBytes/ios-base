@@ -14,9 +14,8 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
     .package(url: "https://github.com/FullQueueDeveloper/ShGit.git", from: "1.0.0"),
-    .package(url: "https://github.com/FullQueueDeveloper/ShXcrun.git", from: "0.1.9"),
     .package(url: "https://github.com/FullQueueDeveloper/SwishXCAssets.git", from: "0.2.0"),
-    .package(url: "https://github.com/FullQueueDeveloper/SwishAppStore.git", from: "0.1.1"),
+    .package(url: "https://github.com/FullQueueDeveloper/SwishAppStore.git", from: "0.2.0"),
     .package(url: "https://github.com/swhitty/SwiftDraw.git", from: "0.13.3"),
     .package(url: "https://github.com/0xOpenBytes/o", from: "2.0.0")
   ],

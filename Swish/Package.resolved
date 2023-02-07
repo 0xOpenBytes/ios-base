@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FullQueueDeveloper/ShXcrun.git",
       "state" : {
-        "revision" : "eb83e761ef0cf46e2db054260540ec5ac219ec03",
-        "version" : "0.2.0"
+        "revision" : "c84151a8c208de50f7ac5f3bcd096a538b4e120d",
+        "version" : "0.3.0"
       }
     },
     {
@@ -61,6 +61,15 @@
       "state" : {
         "revision" : "cabfd9fe8199fedeb75f259fb30268cfbc2042c3",
         "version" : "0.13.3"
+      }
+    },
+    {
+      "identity" : "swishappstore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FullQueueDeveloper/SwishAppStore.git",
+      "state" : {
+        "revision" : "b7aa3d8b29cc28f9ef5ea886d0e5fc94d9e30968",
+        "version" : "0.2.0"
       }
     },
     {
