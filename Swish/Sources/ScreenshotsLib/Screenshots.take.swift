@@ -1,5 +1,6 @@
 import Sh
 import Foundation
+import ShXcrun
 
 extension Screenshots {
   func take() throws {
@@ -7,9 +8,11 @@ extension Screenshots {
     try FileManager.default.createDirectory(atPath: logsPath, withIntermediateDirectories: true)
 
     try Device.allCases.forEach { device in
-      try sh(.file(logsPath + "/\(device.name).build.log"), """
-        xcodebuild -project base.xcodeproj -scheme Screenshots -destination 'platform=iOS Simulator,name=\(device.simulatorName)' -derivedDataPath "\(derivedDataPath)" test
-        """)
+      let xcodebuild = Xcodebuild(scheme: "Screenshots",
+                 destination: .init(platform: .iOSSimulator, os: "iOS", name: device.simulatorName),
+                 derivedDataPath: derivedDataPath)
+
+      try xcodebuild.test(.file(logsPath + "/\(device.name).build.log"))
 
       let xcresultPath = try findLatestXCResult(in: derivedDataPath)
       try FileManager.default.createDirectory(atPath: "\(pngsPath)/\(device.name)", withIntermediateDirectories: true)
