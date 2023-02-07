@@ -1,4 +1,4 @@
-import AppStoreLib
+import SwishAppStore
 import Foundation
 
 
