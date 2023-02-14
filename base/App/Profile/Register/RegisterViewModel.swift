@@ -23,14 +23,16 @@ import Foundation
 class RegisterViewModel: ObservableObject {
     private var registerNetworking: RegisterNetworking
     private var registerTask: Task<Void, Never>?
+    private var errorHandling: ErrorHandling
 
     @Published var username = ""
     @Published var email = ""
     @Published var password = ""
     @Published var confirmationPassword = ""
 
-    init(registerNetworking: RegisterNetworking) {
+    init(registerNetworking: RegisterNetworking, errorHandling: ErrorHandling = ErrorHandling()) {
         self.registerNetworking = registerNetworking
+        self.errorHandling = errorHandling
     }
 
     var areFieldsValidated: Bool {
@@ -63,29 +65,12 @@ class RegisterViewModel: ObservableObject {
                     )
                 }
             } catch {
-                handle(error: error)
+                errorHandling.handleError(error: error)
             }
         }
 
         registerTask = task
 
         return task
-    }
-
-    private func handle(error: Error) {
-        #if DEBUG
-        Navigation.path.toast(
-            title: "Error",
-            message: error.localizedDescription,
-            style: .error
-        )
-        #else
-        print("⚠️ Error! - \(error)")
-        Navigation.path.toast(
-            title: "Error",
-            message: "There was an error registering your account, please try again.",
-            style: .error
-        )
-        #endif
     }
 }
