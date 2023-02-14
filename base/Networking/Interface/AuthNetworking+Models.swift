@@ -17,18 +17,6 @@
 import Foundation
 import t
 
-enum AuthError: LocalizedError {
-    case noData
-    case validation(reason: String)
-
-    var errorDescription: String? {
-        switch self {
-        case .noData:                   return "\(#fileID): No Data"
-        case let .validation(reason):   return "\(#fileID): Validation: \(reason)"
-        }
-    }
-}
-
 // swiftlint:disable identifier_name
 struct RegisterPayload: Codable {
     let name: String
@@ -59,7 +47,7 @@ struct RegisterPayload: Codable {
                 try t.assert(email.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw AuthError.validation(reason: "Invalid Email Address")
+            throw BaseError.validation(reason: "Invalid Email Address")
         }
     }
 
@@ -69,7 +57,7 @@ struct RegisterPayload: Codable {
                 try t.assert(name.count < 256)
             }
         } catch {
-            throw AuthError.validation(reason: "Username is too long")
+            throw BaseError.validation(reason: "Username is too long")
         }
     }
 
@@ -83,7 +71,7 @@ struct RegisterPayload: Codable {
                 try t.assert(password.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw AuthError.validation(
+            throw BaseError.validation(
                 reason: """
                         Passwords must contain:
                             - At least 10 characters

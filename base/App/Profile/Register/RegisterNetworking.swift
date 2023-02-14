@@ -65,7 +65,7 @@ struct NoDataFailureMockRegisterService: RegisterNetworking {
         password: String,
         passwordConfirmation: String
     ) async throws -> User {
-      throw AuthError.noData
+      throw BaseError.noData
     }
 }
 
@@ -77,6 +77,6 @@ struct ValidationFailureMockRegisterService: RegisterNetworking {
         password: String,
         passwordConfirmation: String
     ) async throws -> User {
-        throw AuthError.validation(reason: "Mock Failure")
+        throw BaseError.validation(reason: "Mock Failure")
     }
 }

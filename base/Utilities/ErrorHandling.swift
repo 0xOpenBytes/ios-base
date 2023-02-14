@@ -16,6 +16,20 @@
 
 import Foundation
 
+enum BaseError: LocalizedError {
+    case noData
+    case validation(reason: String)
+    case custom(reason: String)
+
+    var errorDescription: String? {
+        switch self {
+        case .noData:                   return "\(#fileID): No Data"
+        case let .validation(reason):   return "\(#fileID): Validation: \(reason)"
+        case let .custom(reason):   return "\(#fileID): Error: \(reason)"
+        }
+    }
+}
+
 struct ErrorHandling {
     /// Function allows for the passing of an `Error` which will display a forward facing toast message to the user.
     func handleError(error: Error) {
