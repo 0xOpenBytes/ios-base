@@ -14,7 +14,6 @@
 //  SearchScreen.swift
 //
 
-
 import SwiftUI
 
 struct SearchScreen: View {
