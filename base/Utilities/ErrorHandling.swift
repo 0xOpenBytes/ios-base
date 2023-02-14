@@ -17,6 +17,7 @@
 import Foundation
 
 struct ErrorHandling {
+    /// Function allows for the passing of an `Error` which will display a forward facing toast message to the user.
     func handleError(error: Error) {
         #if DEBUG
         Navigation.path.toast(
