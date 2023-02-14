@@ -1,6 +1,16 @@
-# ios-base
-
-The OpenBytes template for iOS projects using SwiftUI
+<div align="center">
+  <img src="https://openbytes.dev/assets/projects/images/ios-base-icon.png" alt="Icon representing the OpenBytes iOS-base template project." width="35%"/>
+  <h1>iOS-Base</h1>
+  <h3>The OpenBytes template for iOS projects using SwiftUI</h3>
+  <a href="https://github.com/0xOpenBytes/ios-base/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"/>
+  </a>
+  <img src="https://img.shields.io/github/v/release/0xOpenBytes/ios-base"/>
+  <a href="https://discord.gg/HUmaDXVsW7">
+    <img src="https://img.shields.io/discord/933406727150391376" alt="Community Chat"/>
+  </a>
+  <img src="https://img.shields.io/badge/iOS-16%2B-informational" alt="iOS Version"/>
+</div>
 
 ## Project
 
@@ -33,11 +43,11 @@ The OpenBytes template for iOS projects using SwiftUI
 
 ### Dependency List
 
-- [OpenBytes o](https://github.com/0xOpenBytes/o)
+- [OpenBytes o](https://github.com/0xOpenBytes/o) <img src="https://img.shields.io/github/v/release/0xOpenBytes/o"/>
   - Allows us to get the input and set the output of file, url, the console, and UserNotifications.
-- [OpenBytes c](https://github.com/0xOpenBytes/c)
+- [OpenBytes c](https://github.com/0xOpenBytes/c) <img src="https://img.shields.io/github/v/release/0xOpenBytes/c"/>
   - Allows us to transform types from one to another while also providing us the various caching options.
-- [Fork](https://github.com/0xLeif/Fork)
+- [Fork](https://github.com/0xLeif/Fork) <img src="https://img.shields.io/github/v/release/0xLeif/Fork"/>
   - Fork allows us to run multiple asynchronous tasks at the same time.
 
 ## Getting Started
