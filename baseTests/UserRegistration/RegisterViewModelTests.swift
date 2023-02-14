@@ -19,7 +19,7 @@ import XCTest
 @testable import base
 
 final class RegisterViewModelTests: XCTestCase {
-    override class func setUp() {
+    override func setUp() {
         super.setUp()
 
         AppSettings.shared.user = nil
@@ -37,9 +37,6 @@ final class RegisterViewModelTests: XCTestCase {
 
         // Expect
         XCTAssertNotNil(AppSettings.shared.user)
-
-        // Finally
-        AppSettings.shared.user = nil
     }
 
     func testNoDataRegisterFailure() throws {

@@ -1,3 +1,4 @@
+---
 name: SwiftLint
 "on":
   pull_request:
