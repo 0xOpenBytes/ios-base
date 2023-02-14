@@ -7,7 +7,7 @@
   </a>
   <img src="https://img.shields.io/github/v/release/0xOpenBytes/ios-base"/>
   <a href="https://discord.gg/HUmaDXVsW7">
-    <img src="https://img.shields.io/discord/431917998102675485.svg" alt="Team Chat"/>
+    <img src="https://img.shields.io/discord/933406727150391376" alt="Community Chat"/>
   </a>
   <img src="https://img.shields.io/badge/iOS-16%2B-informational" alt="iOS Version"/>
 </div>
