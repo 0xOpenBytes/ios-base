@@ -20,17 +20,27 @@ import Foundation
  The `RegisterViewModel` conforms to type `ObservableObject`,
  and acts as mediator between the view and the networking layer.
  */
-class RegisterViewModel: ObservableObject {
+class RegisterViewModel: ObservableObject, ErrorHandling {
     private var registerNetworking: RegisterNetworking
     private var registerTask: Task<Void, Never>?
+
+    var errorHandler: ErrorHandler
 
     @Published var username = ""
     @Published var email = ""
     @Published var password = ""
     @Published var confirmationPassword = ""
 
-    init(registerNetworking: RegisterNetworking) {
+    init(
+        registerNetworking: RegisterNetworking,
+        errorHandler: ErrorHandler = ErrorHandler(
+            plugins: [
+                ToastErrorPlugin()
+            ]
+        )
+    ) {
         self.registerNetworking = registerNetworking
+        self.errorHandler = errorHandler
     }
 
     var areFieldsValidated: Bool {
@@ -63,7 +73,7 @@ class RegisterViewModel: ObservableObject {
                     )
                 }
             } catch {
-                ErrorHandler.shared.handle(error: error)
+                errorHandler.handle(error: error)
             }
         }
 
