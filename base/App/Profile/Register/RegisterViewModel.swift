@@ -23,16 +23,14 @@ import Foundation
 class RegisterViewModel: ObservableObject {
     private var registerNetworking: RegisterNetworking
     private var registerTask: Task<Void, Never>?
-    private var errorHandling: ErrorHandling
 
     @Published var username = ""
     @Published var email = ""
     @Published var password = ""
     @Published var confirmationPassword = ""
 
-    init(registerNetworking: RegisterNetworking, errorHandling: ErrorHandling = ErrorHandling()) {
+    init(registerNetworking: RegisterNetworking) {
         self.registerNetworking = registerNetworking
-        self.errorHandling = errorHandling
     }
 
     var areFieldsValidated: Bool {
@@ -65,7 +63,7 @@ class RegisterViewModel: ObservableObject {
                     )
                 }
             } catch {
-                errorHandling.handleError(error: error)
+                ErrorHandler.shared.handle(error: error)
             }
         }
 
