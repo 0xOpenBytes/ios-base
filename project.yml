@@ -5,6 +5,9 @@ packages:
   Fork:
     url: https://github.com/0xLeif/Fork
     from: 1.0.0
+  Scribe:
+    url: https://github.com/0xLeif/Scribe
+    from: 1.2.0
   o:
     url: https://github.com/0xOpenBytes/o
     from: 2.0.0
@@ -48,6 +51,7 @@ targets:
             - "Swish"
     dependencies:
       - package: Fork
+      - package: Scribe
       - package: o
       - package: c
     postCompileScripts:
