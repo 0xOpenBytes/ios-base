@@ -17,6 +17,16 @@
 import Foundation
 import t
 
+private enum RegisterPayloadError: LocalizedError {
+    case validation(reason: String)
+
+    var errorDescription: String? {
+        switch self {
+        case let .validation(reason):   return "\(#fileID): Validation: \(reason)"
+        }
+    }
+}
+
 // swiftlint:disable identifier_name
 struct RegisterPayload: Codable {
     let name: String
@@ -47,7 +57,7 @@ struct RegisterPayload: Codable {
                 try t.assert(email.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw BaseError.validation(reason: "Invalid Email Address")
+            throw RegisterPayloadError.validation(reason: "Invalid Email Address")
         }
     }
 
@@ -57,7 +67,7 @@ struct RegisterPayload: Codable {
                 try t.assert(name.count < 256)
             }
         } catch {
-            throw BaseError.validation(reason: "Username is too long")
+            throw RegisterPayloadError.validation(reason: "Username is too long")
         }
     }
 
@@ -71,7 +81,7 @@ struct RegisterPayload: Codable {
                 try t.assert(password.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw BaseError.validation(
+            throw RegisterPayloadError.validation(
                 reason: """
                         Passwords must contain:
                             - At least 10 characters

@@ -16,6 +16,18 @@
 
 import Foundation
 
+private enum AuthNetworkingError: LocalizedError {
+    case noData
+    case validation(reason: String)
+
+    var errorDescription: String? {
+        switch self {
+        case .noData:                   return "\(#fileID): No Data"
+        case let .validation(reason):   return "\(#fileID): Validation: \(reason)"
+        }
+    }
+}
+
 extension AuthNetworking {
     var tokenFileName: String { "base.token" }
 
@@ -75,13 +87,13 @@ extension AuthNetworking {
         let httpResponse = dataResponse.response as? HTTPURLResponse
 
         guard httpResponse?.statusCode == 200 else {
-            throw BaseError.validation(
+            throw AuthNetworkingError.validation(
                 reason: "Status code was not 200, but was: '\(httpResponse?.statusCode ?? -1)'"
             )
         }
 
         guard let data = dataResponse.data else {
-            throw BaseError.noData
+            throw AuthNetworkingError.noData
         }
 
         let decoder = JSONDecoder()
