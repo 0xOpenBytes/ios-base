@@ -14,7 +14,7 @@
 //  RegisterNetworking.swift
 //
 
-import Foundation
+import t
 
 protocol RegisterNetworking {
    mutating func register(
@@ -65,7 +65,7 @@ struct NoDataFailureMockRegisterService: RegisterNetworking {
         password: String,
         passwordConfirmation: String
     ) async throws -> User {
-      throw BaseError.noData
+        throw t.error(description: "No Data")
     }
 }
 
@@ -77,6 +77,6 @@ struct ValidationFailureMockRegisterService: RegisterNetworking {
         password: String,
         passwordConfirmation: String
     ) async throws -> User {
-        throw BaseError.validation(reason: "Mock Failure")
+        throw t.error(description: "Validation")
     }
 }
