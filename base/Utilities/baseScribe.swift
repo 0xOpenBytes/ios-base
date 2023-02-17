@@ -11,7 +11,7 @@
 //  https://github.com/0xOpenBytes/ios-BASE/blob/main/LICENSE
 //
 // Created by Leif.
-//  Scribe.swift
+//  baseScribe.swift
 //
 
 import Scribe
