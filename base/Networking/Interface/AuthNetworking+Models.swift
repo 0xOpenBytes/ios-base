@@ -17,13 +17,11 @@
 import Foundation
 import t
 
-enum AuthError: LocalizedError {
-    case noData
+private enum RegisterPayloadError: LocalizedError {
     case validation(reason: String)
 
     var errorDescription: String? {
         switch self {
-        case .noData:                   return "\(#fileID): No Data"
         case let .validation(reason):   return "\(#fileID): Validation: \(reason)"
         }
     }
@@ -59,7 +57,7 @@ struct RegisterPayload: Codable {
                 try t.assert(email.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw AuthError.validation(reason: "Invalid Email Address")
+            throw RegisterPayloadError.validation(reason: "Invalid Email Address")
         }
     }
 
@@ -69,7 +67,7 @@ struct RegisterPayload: Codable {
                 try t.assert(name.count < 256)
             }
         } catch {
-            throw AuthError.validation(reason: "Username is too long")
+            throw RegisterPayloadError.validation(reason: "Username is too long")
         }
     }
 
@@ -83,7 +81,7 @@ struct RegisterPayload: Codable {
                 try t.assert(password.matches(of: regex).isEmpty == false)
             }
         } catch {
-            throw AuthError.validation(
+            throw RegisterPayloadError.validation(
                 reason: """
                         Passwords must contain:
                             - At least 10 characters
