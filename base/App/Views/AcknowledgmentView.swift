@@ -28,6 +28,20 @@ extension OBbaseApp {
                 description: "Fork is a Swift library that allows for parallelizing multiple async functions. It provides a Fork struct that takes a single input and splits it into two separate async functions that return different outputs. The two functions can then be merged into one which returns a single output."
             ),
             Acknowledgment(
+                title: "Plugin",
+                author: "0xLeif",
+                url: URL(string: "https://github.com/0xLeif/Plugin"),
+                iconURL: URL(string: "https://avatars.githubusercontent.com/u/8268288?v=4"),
+                description: "Plugin is a Swift SPM project that provides a flexible and modular approach to enhancing object functionality through the use of plugins."
+            ),
+            Acknowledgment(
+                title: "Scribe",
+                author: "0xLeif",
+                url: URL(string: "https://github.com/0xLeif/Scribe"),
+                iconURL: URL(string: "https://avatars.githubusercontent.com/u/8268288?v=4"),
+                description: "Scribe is a flexible logging library for Swift, designed to make logging easy and efficient."
+            ),
+            Acknowledgment(
                 title: "o",
                 author: "0xOpenBytes",
                 url: URL(string: "https://github.com/0xOpenBytes/o"),
