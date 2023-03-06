@@ -13,7 +13,7 @@ packages:
     from: 2.0.0
   c:
     url: https://github.com/0xOpenBytes/c
-    from: 3.0.0
+    from: 4.0.0
 schemes:
   base:
     build:
