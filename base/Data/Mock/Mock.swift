@@ -14,6 +14,7 @@
 //  Mock.swift
 //
 
+import Disk
 import Foundation
 
 enum Mock {
@@ -21,11 +22,11 @@ enum Mock {
         named: String,
         type: Value.Type = Value.self,
         using decoder: JSONDecoder = JSONDecoder()
-    ) throws -> Value? {
-        guard let file = Bundle.main.url(forResource: named, withExtension: "json") else {
-            return nil
-        }
-
-        return try decoder.decode(Value.self, from: Data(contentsOf: file))
+    ) -> Value? {
+        try? Disk.json(
+            named: named,
+            type: type,
+            using: decoder
+        )
     }
 }

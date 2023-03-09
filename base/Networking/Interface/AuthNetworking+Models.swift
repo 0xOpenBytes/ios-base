@@ -15,7 +15,7 @@
 //
 
 import Foundation
-import t
+import Test
 
 private enum RegisterPayloadError: LocalizedError {
     case validation(reason: String)
@@ -48,13 +48,15 @@ struct RegisterPayload: Codable {
     }
 
     private func validateEmail() throws {
+        let tester = Tester()
+
         do {
-            try t.expect {
-                try t.assert(email.count < 256)
+            try Expect {
+                try tester.assert(email.count < 256)
 
                 let regex = try Regex("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,255}")
 
-                try t.assert(email.matches(of: regex).isEmpty == false)
+                try tester.assert(email.matches(of: regex).isEmpty == false)
             }
         } catch {
             throw RegisterPayloadError.validation(reason: "Invalid Email Address")
@@ -62,9 +64,11 @@ struct RegisterPayload: Codable {
     }
 
     private func validateUsername() throws {
+        let tester = Tester()
+
         do {
-            try t.expect {
-                try t.assert(name.count < 256)
+            try Expect {
+                try tester.assert(name.count < 256)
             }
         } catch {
             throw RegisterPayloadError.validation(reason: "Username is too long")
@@ -72,13 +76,15 @@ struct RegisterPayload: Codable {
     }
 
     private func validatePasswords() throws {
+        let tester = Tester()
+
         do {
-            try t.expect {
-                try t.assert(password, isEqualTo: password_confirmation)
+            try Expect {
+                try tester.assert(password, isEqualTo: password_confirmation)
 
                 let regex = try Regex(#"^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{10, 255}$"#)
 
-                try t.assert(password.matches(of: regex).isEmpty == false)
+                try tester.assert(password.matches(of: regex).isEmpty == false)
             }
         } catch {
             throw RegisterPayloadError.validation(

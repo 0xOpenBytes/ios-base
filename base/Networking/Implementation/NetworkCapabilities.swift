@@ -14,8 +14,6 @@
 //  NetworkCapabilities.swift
 //
 
-import o
-
-typealias Network = o.url
+import Network
 
 extension Network: StaticTaskable { }

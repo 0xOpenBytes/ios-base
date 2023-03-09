@@ -25,15 +25,15 @@ final class DataCacheTests: XCTestCase {
         let testID = UUID().uuidString
         let user = try XCTUnwrap(Mock.users.first)
 
-        XCTAssertNil(cache.get(testID, type: User.self))
+        XCTAssertNil(cache.get(testID, as: User.self))
 
         cache.set(value: user, forKey: testID)
 
-        XCTAssertNotNil(cache.get(testID, type: User.self))
+        XCTAssertNotNil(cache.get(testID, as: User.self))
 
         cache.remove(testID)
 
-        XCTAssertNil(cache.get(testID, type: User.self))
+        XCTAssertNil(cache.get(testID, as: User.self))
 
         cache.set(value: Color.green, forKey: "color")
 
@@ -41,6 +41,6 @@ final class DataCacheTests: XCTestCase {
 
         XCTAssertNotNil(color)
 
-        XCTAssertNotNil(cache.get("color", type: Color.self))
+        XCTAssertNotNil(cache.get("color", as: Color.self))
     }
 }
