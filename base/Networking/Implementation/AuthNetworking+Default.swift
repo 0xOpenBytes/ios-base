@@ -14,7 +14,9 @@
 //  AuthNetworking+Default.swift
 //
 
+import Disk
 import Foundation
+import Network
 
 private enum AuthNetworkingError: LocalizedError {
     case noData

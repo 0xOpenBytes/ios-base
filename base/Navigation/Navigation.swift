@@ -14,20 +14,19 @@
 //  Navigation.swift
 //
 
+import OpenBytesNavigation
 import SwiftUI
 
 public final class Navigation: ObservableObject {
     static var shared: Navigation = Navigation()
 
-    var home: CartographyPath = CartographyPath.load(id: "home")
-    var search: CartographyPath = CartographyPath.load(id: "search")
-    var profile: CartographyPath = CartographyPath.load(id: "profile")
-
-    var isPreview = false
+    var home: OpenBytesNavigationPath = OpenBytesNavigationPath.load(id: "home")
+    var search: OpenBytesNavigationPath = OpenBytesNavigationPath.load(id: "search")
+    var profile: OpenBytesNavigationPath = OpenBytesNavigationPath.load(id: "profile")
 
     @Published var tab: RootView.Tab = .home
 
-    static var path: CartographyPath {
+    static var path: OpenBytesNavigationPath {
         Navigation.shared.use { navigation in
             switch navigation.tab {
             case .home:     return navigation.home

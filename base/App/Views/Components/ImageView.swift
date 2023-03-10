@@ -14,6 +14,7 @@
 //  ImageView.swift
 //
 
+import Network
 import SwiftUI
 
 class ImageViewModel: ObservableObject {

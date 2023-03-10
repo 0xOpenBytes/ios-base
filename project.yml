@@ -8,12 +8,21 @@ packages:
   Scribe:
     url: https://github.com/0xLeif/Scribe
     from: 1.2.0
-  o:
-    url: https://github.com/0xOpenBytes/o
-    from: 2.0.0
-  c:
-    url: https://github.com/0xOpenBytes/c
-    from: 3.0.0
+  Disk:
+    url: https://github.com/0xOpenBytes/Disk
+    from: 0.1.0
+  Network:
+    url: https://github.com/0xOpenBytes/Network
+    from: 0.1.0
+  Cache:
+    url: https://github.com/0xOpenBytes/Cache
+    from: 0.1.0
+  Test:
+    url: https://github.com/0xOpenBytes/Test
+    from: 0.1.0
+  OpenBytesNavigation:
+    url: https://github.com/0xOpenBytes/OpenBytesNavigation
+    from: 0.1.0
 schemes:
   base:
     build:
@@ -52,8 +61,11 @@ targets:
     dependencies:
       - package: Fork
       - package: Scribe
-      - package: o
-      - package: c
+      - package: Disk
+      - package: Network
+      - package: Cache
+      - package: Test
+      - package: OpenBytesNavigation
     postCompileScripts:
       - name: Swiftlint
         script: |

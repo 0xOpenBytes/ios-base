@@ -14,6 +14,7 @@
 //  RootView.swift
 //
 
+import OpenBytesNavigation
 import SwiftUI
 
 struct RootView: View {
@@ -27,7 +28,7 @@ struct RootView: View {
 
     var body: some View {
         TabView(selection: $navigation.tab) {
-            CartographyView(path: navigation.home) {
+            OpenBytesNavigationView(path: navigation.home) {
                 HomeScreen()
             }
             .tag(Tab.home)
@@ -36,7 +37,7 @@ struct RootView: View {
                 Text("Home")
             }
 
-            CartographyView(path: navigation.search) {
+            OpenBytesNavigationView(path: navigation.search) {
                 SearchScreen()
             }
             .tag(Tab.search)
@@ -45,7 +46,7 @@ struct RootView: View {
                 Text("Search")
             }
 
-            CartographyView(path: navigation.profile) {
+            OpenBytesNavigationView(path: navigation.profile) {
                 ProfileScreen()
             }
             .tag(Tab.profile)
@@ -60,9 +61,9 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         Navigation.shared.use { navigation -> RootView in
-            navigation.home = CartographyPath(id: "home.preview")
-            navigation.search = CartographyPath(id: "search.preview")
-            navigation.profile = CartographyPath(id: "profile.preview")
+            navigation.home = OpenBytesNavigationPath(id: "home.preview", isPreview: true)
+            navigation.search = OpenBytesNavigationPath(id: "search.preview", isPreview: true)
+            navigation.profile = OpenBytesNavigationPath(id: "profile.preview", isPreview: true)
 
             return RootView(navigation: navigation)
         }

@@ -14,6 +14,7 @@
 //  SearchScreen.swift
 //
 
+import OpenBytesNavigation
 import SwiftUI
 
 struct SearchScreen: View {
@@ -79,7 +80,7 @@ struct SearchScreen: View {
 
 struct SearchScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CartographyView.preview {
+        OpenBytesNavigationView.preview {
             SearchScreen()
         }
     }

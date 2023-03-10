@@ -14,8 +14,19 @@
 //  DiskCapabilities.swift
 //
 
-import o
+import Disk
+import Foundation
 
-typealias Disk = o.file
+extension Disk: StaticUsable {
+    static func json<Value: Codable>(
+        named: String,
+        type: Value.Type = Value.self,
+        using decoder: JSONDecoder = JSONDecoder()
+    ) throws -> Value? {
+        guard let file = Bundle.main.url(forResource: named, withExtension: "json") else {
+            return nil
+        }
 
-extension Disk: StaticUsable { }
+        return try decoder.decode(Value.self, from: Data(contentsOf: file))
+    }
+}
