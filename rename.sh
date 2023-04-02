@@ -4,12 +4,12 @@ read -p 'Project Name: ' projectvar
 
 if [[ "$projectvar" =~ [a-zA-Z_][a-zA-Z_0-9]*$ ]]; then
     grep -rli 'NEW_NAME' scripts/rename-base.sh | xargs -I@ sed -i '' "s/NEW_NAME/$projectvar/g" @
-    
+
     sh ./scripts/rename-base.sh
-    
-    swish appicon
-    swish xcodeproj
-    
+
+    spx appicon
+    spx xcodeproj
+
     rm -rf scripts
     rm rename.sh
 else

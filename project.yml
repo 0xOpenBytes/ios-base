@@ -54,10 +54,10 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-        - path: base
-          name: base
-          excludes:
-            - "Swish"
+      - path: base
+        name: base
+        excludes:
+          - "SPX"
     dependencies:
       - package: Fork
       - package: Scribe

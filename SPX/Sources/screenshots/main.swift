@@ -1,9 +1,9 @@
 import ScreenshotsLib
 
-let logsPath = "Swish/Screenshots/Logs"
-let derivedDataPath = "Swish/Screenshots/DerivedData"
-let pngsPath = "Swish/Screenshots/PNGs"
-let masksPath = "Swish/Screenshots/Masks"
+let logsPath = "SPX/Screenshots/Logs"
+let derivedDataPath = "SPX/Screenshots/DerivedData"
+let pngsPath = "SPX/Screenshots/PNGs"
+let masksPath = "SPX/Screenshots/Masks"
 
 try Screenshots(
   logsPath: logsPath,
