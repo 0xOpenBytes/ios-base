@@ -92,3 +92,4 @@ iOSInjectionProject/
 *.xcodeproj
 SPX/.swiftpm
 base/AppIcon.xcassets/
+SPX/Screenshots
