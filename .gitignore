@@ -90,5 +90,6 @@ fastlane/test_output
 iOSInjectionProject/
 .DS_Store
 *.xcodeproj
-Swish/.swiftpm
+SPX/.swiftpm
 base/AppIcon.xcassets/
+SPX/Screenshots

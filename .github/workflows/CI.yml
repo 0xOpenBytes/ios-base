@@ -20,9 +20,9 @@ jobs:
       - name: Development dependencies
         run: brew bundle
       - name: Development scripts build
-        run: swish -b
+        run: spx -b
       - name: Generate project
-        run: swish xcodeproj
+        run: spx xcodeproj
       - name: Build
         run: >
           xcodebuild build -project base.xcodeproj -scheme base clean
@@ -33,5 +33,5 @@ jobs:
           build -sdk iphoneos -destination "platform=iOS
           Simulator,OS=16.1,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
       - name: Screenshots
-        run: swish screenshots
+        run: spx screenshots
 # yamllint enable rule:line-length
