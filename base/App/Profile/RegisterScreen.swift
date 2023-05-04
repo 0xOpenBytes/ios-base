@@ -21,15 +21,6 @@ struct RegisterScreen: View {
 
     @FocusState var isFocused: Bool
 
-    init(
-        registerViewModel: RegisterViewModel = RegisterViewModel(
-            registerNetworking: ProductionRegisterService()
-        )
-    ) {
-        self.registerViewModel = registerViewModel
-        self.isFocused = false
-    }
-
     var body: some View {
         VStack {
             Spacer()
