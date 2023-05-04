@@ -17,7 +17,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @ObservedObject var settings: AppSettings = AppSettings.shared
+    @StateObject var settings: AppSettings = AppSettings.shared
 
     var body: some View {
         VStack {

@@ -17,7 +17,7 @@
 import SwiftUI
 
 struct RegisterScreen: View {
-    @ObservedObject var registerViewModel: RegisterViewModel
+    @StateObject var registerViewModel: RegisterViewModel
 
     @FocusState var isFocused: Bool
 

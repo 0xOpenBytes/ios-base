@@ -18,7 +18,7 @@ import SwiftUI
 
 @main
 struct OBbaseApp: App {
-    @ObservedObject var navigation: Navigation = Navigation.shared
+    @StateObject var navigation: Navigation = Navigation.shared
 
     var body: some Scene {
         WindowGroup {

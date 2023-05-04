@@ -57,7 +57,7 @@ class ImageViewModel: ObservableObject {
 }
 
 struct ImageView<Content: View, Placeholder: View>: View {
-    @ObservedObject private var viewModel = ImageViewModel()
+    @StateObject private var viewModel = ImageViewModel()
 
     let url: URL?
     let content: (Image) -> Content

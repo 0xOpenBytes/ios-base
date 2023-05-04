@@ -17,7 +17,7 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    @ObservedObject var settings: AppSettings = AppSettings.shared
+    @StateObject var settings: AppSettings = AppSettings.shared
 
     var body: some View {
         Group {
